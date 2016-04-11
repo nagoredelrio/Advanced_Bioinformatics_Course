@@ -1,0 +1,33 @@
+# Assignment Day 1
+
+## Join at least 3 tables
+
+SELECT Employees.EmployeeID, Orders.EmployeeID, Orders.OrderID, OrderDetails.OrderID, OrderDetails.ProductID, Products.ProductID, OrderDetails.Quantity, Products.Price, (OrderDetails.Quantity*Products.Price) AS FinalAmount
+FROM Employees
+JOIN Orders
+ON Orders.EmployeeID=Employees.EmployeeID
+JOIN OrderDetails
+ON Orders.OrderID=OrderDetails.OrderID
+JOIN Products
+ON Products.ProductID=OrderDetails.ProductID
+ORDER BY Employees.EmployeeID
+
+## Create 2 databases for mutations and samples
+
+CREATE TABLE Mutations
+(
+MutationID varchar(15),
+Gene varchar(10),
+Chromosome varchar(2),
+Position int(10),
+Original char(1),
+New char(1),
+Type varchar(20)
+);
+
+CREATE TABLE Samples
+(
+SampleID varchar(15),
+MutationID varchar(15),
+GT char(3)
+);
