@@ -1,0 +1,68 @@
+# Exercise 1:
+# Script to count how many times the transcript ENST00000263967 appears in the PIK3CA.vcf file annotation field.
+
+# Before starting do this in command line:
+
+# cat PIK3CA.vcf |bio-vcf --template pik3_template.json > PIK3CA.json
+# mongoimport --db pik3 --collection vcf --drop --file PIK3CA.json --jsonArray
+
+# pik3_template.json file is:
+'''{
+	"rec":{
+            "chr": "<%= rec.chrom %>",
+            "pos": <%= rec.pos %>,
+            "ref": "<%= rec.ref %>",
+            "alt": "<%= rec.alt[0] %>",
+            "ann":  '"<%= rec.info.ann %>"'
+	}
+}'''
+
+from pymongo import MongoClient
+
+client = MongoClient()
+db = client.pik3
+cursor = db.vcf.find()
+count = 0
+for document in cursor:
+	if "ENST00000263967" in document["rec"]["ann"]:
+		count+=1
+print count
+
+# Exercise 2:
+# Script that filters samples 3 and 4 that have dp > 7.
+
+# Before starting do this in command line:
+
+# cat PIK3CA.vcf |bio-vcf --template pik3_template_2.json > PIK3CA2.json
+# mongoimport --db pik3 --collection vcf --drop --file PIK3CA2.json --jsonArray
+
+# pik3_template.json file is:
+'''{
+  "rec": {
+            "chr": "<%= rec.chrom %>",
+            "pos": <%= rec.pos %>,
+            "ref": "<%= rec.ref %>",
+            "alt": "<%= rec.alt[0] %>",
+            "dp":  <%= rec.info.dp %>,
+            "samples": [
+              <%=
+              a = []
+              rec.each_sample { |s| a.push s.dp }
+              a.join(',')
+              %>
+   ]
+  }
+}'''
+
+from pymongo import MongoClient
+
+client = MongoClient()
+db = client.pik3
+cursor = db.vcf.find()
+count=0
+print "Chr","\t", "Pos","\t", "Sample 3 DP","\t", "Sample 4 DP"
+for document in cursor:
+	if document["rec"]["samples"][2]>7 and document["rec"]["samples"][3]>7:
+		count+=1
+		print document["rec"]["chr"], "\t", document["rec"]["pos"], "\t", document["rec"]["samples"][2], "\t",  document["rec"]["samples"][3]
+print "Total count is", count
