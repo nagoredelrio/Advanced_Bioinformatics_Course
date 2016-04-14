@@ -1,0 +1,33 @@
+{
+	"rec":{
+            "query_id": "Ned_Stark" ,
+			"House": "Stark" ,
+			"Origin": "Winterfell" ,
+			"Spouse": "Catelyn_Stark" ,
+			"Descendant": "John_Snow",
+			"Descendant": "Rob_Stark",
+			"Descendant": "Sansa_Stark",
+			"Descendant": "Bran_Stark",
+			"Descendant": "Arya_Stark",
+			"Descendant": "Rickon_Stark",
+			"Friend": "Robert_Baratheon",
+			"Killer": "Joffrey_Baratheon",
+			"Status": "Dead"
+	}
+}
+{
+	"rec":{
+            "query_id": "Catelyn_Stark" ,
+			"House": "Stark" ,
+			"Origin": "Riverrun" ,
+			"Spouse": "Ned_Stark" ,
+			"Descendant": "Rob_Stark",
+			"Descendant": "Sansa_Stark",
+			"Descendant": "Bran_Stark",
+			"Descendant": "Arya_Stark",
+			"Descendant": "Rickon_Stark",
+			"Killer": "Roose_Bolton",
+			"Friend": "Petyr_Baelish",
+			"Status": "Dead"
+	}
+}
