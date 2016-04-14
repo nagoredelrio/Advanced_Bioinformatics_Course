@@ -31,3 +31,173 @@
 			"Status": "Dead"
 	}
 }
+{
+	"rec":{
+            "query_id": "John_Snow" ,
+			"House": "Stark" ,
+			"Origin": "Winterfell" ,
+			"Killer": "Night's_watch",
+			"Status": "Dead"
+	}
+}
+{
+	"rec":{
+			"query_id": "Rob_Stark" ,
+			"House": "Stark" ,
+			"Origin": "Winterfell" ,
+			"Killer": "Roose_Bolton",
+			"Enemy": "Roose_Bolton",
+			"Status": "Dead"  
+	}
+}
+{
+	"rec":{
+			"query_id": "Sansa_Stark" ,
+			"House": "Stark" ,
+			"Origin": "Winterfell" ,
+			"Status": "Alive" 
+	}
+}
+{
+	"rec":{
+            "query_id": "Bran_Stark" ,
+			"House": "Stark" ,
+			"Origin": "Winterfell" ,
+			"Status": "Alive"
+	}
+}
+{
+	"rec":{
+            "query_id": "Arya_Stark" ,
+			"House": "Stark" ,
+			"Origin": "Winterfell" ,
+			"Status": "Alive"
+	}
+}
+{
+	"rec":{
+            "query_id": "Rickon_Stark" ,
+			"House": "Stark" ,
+			"Origin": "Winterfell" ,
+			"Status": "Alive"
+	}
+}
+{
+	"rec":{
+            "query_id": "Tywin_Lannister" ,
+			"House": "Lannister" ,
+			"Origin": "Casterly_Rock" ,
+			"Descendant": "Jamie_Lannister",
+			"Descendant": "Cersei_Lannister",
+			"Descendant": "Tyrion_Lannister",
+			"Killer": "Tyrion_Lannister",
+			"Friend": "Roose_Bolton",
+			"Status": "Dead"
+	}
+}
+{
+	"rec":{
+            "query_id": "Jamie_Lannister" ,
+			"House": "Lannister" ,
+			"Origin": "Casterly_Rock" ,
+			"Status": "Alive"
+	}
+}
+{
+	"rec":{
+            "query_id": "Cersei_Lannister" ,
+			"House": "Lannister" ,
+			"Origin": "Casterly_Rock" ,
+			"Spouse": "Robert_Baratheon",
+			"Descendant": "Joffrey_Baratheon",
+			"Descendant": "Myrcella_Baratheon",
+			"Descendant": "Tommen_Baratheon",
+			"Status": "Alive"
+	}
+}
+{
+	"rec":{
+            "query_id": "Tyrion_Lannister" ,
+			"House": "Lannister" ,
+			"Origin": "Casterly_Rock" ,
+			"Status": "Alive"
+	}
+}
+{
+	"rec":{
+            "query_id": "Robert_Baratheon" ,
+			"House": "Baratheon" ,
+			"Origin": "Storm's_end" ,
+			"Spouse": "Cersei_Lannister",
+			"Descendant": "Joffrey_Baratheon",
+			"Descendant": "Myrcella_Baratheon",
+			"Descendant": "Tommen_Baratheon",
+			"Friend": "Ned_Stark",
+			"Enemy": "Daenerys_Targaryen",
+			"Killer": "Cersei_Lannister",
+			"Status": "Dead"
+	}
+}
+{
+	"rec":{
+            "query_id": "Joffrey_Baratheon" ,
+			"House": "Baratheon" ,
+			"Origin": "King's_Landing" ,
+			"Killer": "Petyr_Baelish",
+			"Status": "Dead"
+	}
+}
+{
+	"rec":{
+            "query_id": "Myrcella_Baratheon" ,
+			"House": "Baratheon" ,
+			"Origin": "King's_Landing" ,
+			"Status": "Alive"
+	}
+}
+{
+	"rec":{
+            "query_id": "Tommen_Baratheon" ,
+			"House": "Baratheon" ,
+			"Origin": "King's_Landing" ,
+			"Spouse": "Margaery_Tyrell",
+			"Status": "Alive"
+	}
+}
+{
+	"rec":{
+            "query_id": "Margaery_Tyrell" ,
+			"House": "Tyrell" ,
+			"Origin": "Highgarden" ,
+			"Spouse": "Tommen_Baratheon",
+			"Status": "Alive"
+	}
+}
+{
+	"rec":{
+            "query_id": "Daenerys_Targaryen" ,
+			"House": "Targaryen" ,
+			"Origin": "King's_Landing" ,
+			"Enemy": "Robert_Baratheon",
+			"Status": "Alive"
+	}
+}
+{
+	"rec":{
+            "query_id": "Roose_Bolton" ,
+			"House": "Bolton" ,
+			"Origin": "Dreadfort" ,
+			"Enemy": "Rob_Stark",
+			"Friend": "Tywin_Lannister",
+			"Status": "Alive"
+	}
+}
+{
+	"rec":{
+            "query_id": "Petyr_Baelish" ,
+			"House": "Baelish" ,
+			"Origin": "The_Fingers" ,
+			"Friend": "Catelyn_Stark",
+			"Status": "Alive"
+	}
+}
