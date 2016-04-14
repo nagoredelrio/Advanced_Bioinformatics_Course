@@ -1,0 +1,146 @@
+@prefix : <http://biobeat.org/rdf/ns#> . 
+:Ned_Stark
+  :query_id "Ned_Stark" ;
+  :House "Stark" ;
+  :Origin "Winterfell" ;
+  :Spouse "Catelyn_Stark" ;
+  :Descendant "John_Snow";
+  :Descendant "Rob_Stark";
+  :Descendant "Sansa_Stark";
+  :Descendant "Bran_Stark";
+  :Descendant "Arya_Stark";
+  :Descendant "Rickon_Stark";
+  :Friend "Robert_Baratheon";
+  :Killer "Joffrey_Baratheon";
+  :Status "Dead" . 
+:Catelyn_Stark
+  :query_id "Catelyn_Stark" ;
+  :House "Stark" ;
+  :Origin "Riverrun" ;
+  :Spouse "Ned_Stark" ;
+  :Descendant "Rob_Stark";
+  :Descendant "Sansa_Stark";
+  :Descendant "Bran_Stark";
+  :Descendant "Arya_Stark";
+  :Descendant "Rickon_Stark";
+  :Killer "Roose_Bolton";
+  :Friend "Petyr_Baelish";
+  :Status "Dead" . 
+:John_Snow
+  :query_id "John_Snow" ;
+  :House "Stark" ;
+  :Origin "Winterfell" ;
+  :Killer "Night's_watch";
+  :Status "Dead" . 
+:Rob_Stark
+  :query_id "Rob_Stark" ;
+  :House "Stark" ;
+  :Origin "Winterfell" ;
+  :Killer "Roose_Bolton";
+  :Enemy "Roose_Bolton";
+  :Status "Dead" . 
+:Sansa_Stark
+  :query_id "Sansa_Stark" ;
+  :House "Stark" ;
+  :Origin "Winterfell" ;
+  :Status "Alive" . 
+:Bran_Stark
+  :query_id "Bran_Stark" ;
+  :House "Stark" ;
+  :Origin "Winterfell" ;
+  :Status "Alive" . 
+:Arya_Stark
+  :query_id "Arya_Stark" ;
+  :House "Stark" ;
+  :Origin "Winterfell" ;
+  :Status "Alive" . 
+:Rickon_Stark
+  :query_id "Rickon_Stark" ;
+  :House "Stark" ;
+  :Origin "Winterfell" ;
+  :Status "Alive" . 
+:Tywin_Lannister
+  :query_id "Tywin_Lannister" ;
+  :House "Lannister" ;
+  :Origin "Casterly_Rock" ;
+  :Descendant "Jamie_Lannister";
+  :Descendant "Cersei_Lannister";
+  :Descendant "Tyrion_Lannister";
+  :Killer "Tyrion_Lannister";
+  :Friend "Roose_Bolton";
+  :Status "Dead" . 
+:Jamie_Lannister
+  :query_id "Jamie_Lannister" ;
+  :House "Lannister" ;
+  :Origin "Casterly_Rock" ;
+  :Status "Alive" . 
+:Cersei_Lannister
+  :query_id "Cersei_Lannister" ;
+  :House "Lannister" ;
+  :Origin "Casterly_Rock" ;
+  :Spouse "Robert_Baratheon";
+  :Descendant "Joffrey_Baratheon";
+  :Descendant "Myrcella_Baratheon";
+  :Descendant "Tommen_Baratheon";
+  :Status "Alive" . 
+:Tyrion_Lannister
+  :query_id "Tyrion_Lannister" ;
+  :House "Lannister" ;
+  :Origin "Casterly_Rock" ;
+  :Status "Alive" . 
+:Robert_Baratheon
+  :query_id "Robert_Baratheon" ;
+  :House "Baratheon" ;
+  :Origin "Storm's_end" ;
+  :Spouse "Cersei_Lannister";
+  :Descendant "Joffrey_Baratheon";
+  :Descendant "Myrcella_Baratheon";
+  :Descendant "Tommen_Baratheon";
+  :Friend "Ned_Stark";
+  :Enemy "Daenerys_Targaryen";
+  :Killer "Cersei_Lannister";
+  :Status "Dead" . 
+:Joffrey_Baratheon
+  :query_id "Joffrey_Baratheon" ;
+  :House "Baratheon" ;
+  :Origin "King's_Landing" ;
+  :Killer "Petyr_Baelish";
+  :Status "Dead" . 
+:Myrcella_Baratheon
+  :query_id "Myrcella_Baratheon" ;
+  :House "Baratheon" ;
+  :Origin "King's_Landing" ;
+  :Status "Alive" .
+:Tommen_Baratheon
+  :query_id "Tommen_Baratheon" ;
+  :House "Baratheon" ;
+  :Origin "King's_Landing" ;
+  :Spouse "Margaery_Tyrell";
+  :Status "Alive" .
+:Margaery_Tyrell
+  :query_id "Margaery_Tyrell" ;
+  :House "Tyrell" ;
+  :Origin "Highgarden" ;
+  :Spouse "Tommen_Baratheon";
+  :Status "Alive" .
+:Daenerys_Targaryen
+  :query_id "Daenerys_Targaryen" ;
+  :House "Targaryen" ;
+  :Origin "King's_Landing" ;
+  :Enemy "Robert_Baratheon";
+  :Status "Alive" .
+:Roose_Bolton
+  :query_id "Roose_Bolton" ;
+  :House "Bolton" ;
+  :Origin "Dreadfort" ;
+  :Enemy "Rob_Stark";
+  :Friend "Tywin_Lannister";
+  :Status "Alive" .
+:Petyr_Baelish
+  :query_id "Petyr_Baelish" ;
+  :House "Baelish" ;
+  :Origin "The_Fingers" ;
+  :Friend "Catelyn_Stark";
+  :Status "Alive" .
+
+

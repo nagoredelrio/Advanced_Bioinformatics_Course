@@ -1,0 +1,21 @@
+## Query to ask the Game of Thrones character database who killed the most people:
+
+## The following commands should be run in the terminal as a root before running this script:
+
+## rdf=GoT.rdf
+## uri=http://localhost:8000/data/http://biobeat.org/data/$rdf
+## curl -X DELETE $uri
+## curl -T $rdf -H 'Content-Type: application/x-turtle' $uri
+
+## This is how to run this script (as a normal user):
+
+## cat GoT_query2.rq |sparql-query "http://localhost:8000/sparql/" -p 
+
+
+SELECT ?Killer (COUNT(?Killer) as ?KillerCount)
+WHERE
+{
+  ?id <http://biobeat.org/rdf/ns#Killer> ?Killer .
+  
+}
+GROUP BY ?Killer ORDER BY DESC(?KillerCount) LIMIT 1
