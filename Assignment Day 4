@@ -1,0 +1,103 @@
+## Assignment Day 4
+
+# HTML code
+
+<h3>
+Game of Thrones main characters
+</h3>
+<h5>
+To see what each line colour means, choose a relationship type:
+</h5>
+
+Relationship
+<select id="typeSelect">
+    <option value="1">Descendants</option>
+    <option value="2">Friends</option>
+    <option value="3">Enemies</option>
+    <option value="4">Killer</option>
+    <option value="5">Spouse</option>
+</select>
+<script src="//d3js.org/d3.v3.min.js"></script>
+
+# Javascript code
+
+var width = 550,
+    height = 380;
+
+var groupcolor = d3.scale.category20();
+var linkcolor = d3.scale.category10();
+
+d3.select("#typeSelect")
+    .on("change", onChangeType);
+    
+function onChangeType() {
+    var e = document.getElementById("typeSelect");
+		var x = e.options[e.selectedIndex].value;
+    if (x=="1"){alert("Blue lines")}
+    if (x=="2"){alert("Yellow lines")}
+    if (x=="3"){alert("Green lines")}
+    if (x=="4"){alert("Red lines")}
+    if (x=="5"){alert("Purple lines")}
+}
+
+var e = document.getElementById("typeSelect");
+
+var x = e.options[e.selectedIndex].value;
+
+var force = d3.layout.force()
+    .charge(-450)
+    .linkDistance(60)
+    .size([width, height]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+d3.json("https://raw.githubusercontent.com/nagoredelrio/Advanced_Bioinformatics_Course/master/day3/Links.json", function(error, graph) {
+  if (error) throw error;
+
+  force
+      .nodes(graph.nodes)
+      .links(graph.links)
+      .start();
+
+  var link = svg.selectAll(".link")
+      .data(graph.links)
+   		.enter().append("line")
+      .attr("class", "link")
+      //.style("stroke-width", function(d) { return Math.sqrt(d.value); })
+			.style("stroke", function(d) { return linkcolor(d.value); });
+
+  var node = svg.selectAll(".node")
+      .data(graph.nodes)
+    .enter().append("circle")
+      .attr("class", "node")
+      .attr("r", 5)
+      .style("fill", function(d) { return groupcolor(d.group); })
+      .call(force.drag);
+
+  node.append("title")
+      .text(function(d) { return d.name; });
+
+  force.on("tick", function() {
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node.attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+  });
+});
+
+# CSS code
+
+.node {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #000;
+  stroke-opacity: 1;
+}
